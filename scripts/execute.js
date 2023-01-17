@@ -12,7 +12,7 @@ async function main() {
 
   const balanceBeforeMint = await token.balanceOf(OWNER);
 
-  console.log(`Owner's Balance: ${balanceBeforeMint}`);
+  console.log(`Owner's Balance before execution: ${balanceBeforeMint}`);
 
   const tx = await governor.execute(
     [TOKEN_ADDRESS],
@@ -25,7 +25,7 @@ async function main() {
 
   const balanceAfterMint = await token.balanceOf(OWNER);
 
-  console.log(`Owner's Balance: ${balanceAfterMint}`);
+  console.log(`Owner's Balance After execution: ${balanceAfterMint}`);
 }
 
 main().catch((error) => {
